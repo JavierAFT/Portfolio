@@ -1,0 +1,2 @@
+https://pythones.net/solicitudes-en-flask-get-post/
+

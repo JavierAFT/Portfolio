@@ -1,11 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 #creamos la ruta con sus funciones
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def holamundo():
-    return render_template('/index.html')
+    if request.method == 'POST':
+        nombre = request.form['Nombre']
+        return render_template('/index.html', nombre=nombre)
+    else:
+        return render_template('/index.html')
+
 
 #MIS PROYECTOS
 @app.route('/mis-proyectos', methods=['GET'])

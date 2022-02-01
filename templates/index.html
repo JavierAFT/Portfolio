@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
-</html>
+{% extends "base/base.html" %}
+
+{%block title%}Inicio{%endblock%}
+
+{% block columna8 %} 
+    <!-- Contenido HTML -->
+    <br>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Bienvenido {{nombre}}</h4>
+        <h4 class="alert-heading">Aquí se muestra el contenido de las plantillas hijas!</h4>
+        <p>Ahora si, este es un verdadero "HOLA MUNDO"</p>
+        <hr>
+        <p class="mb-0">Excelente!</p>
+    </div>
+{% endblock %}
+
+<!-- Aqui se mostrara el contenido de la columna4 -->
+
+{% block columna4 %}
+    <p>Formulario</p>
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="name">Ingrese su nombre</label>
+            <input type="text" class="form-control" name="Nombre">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

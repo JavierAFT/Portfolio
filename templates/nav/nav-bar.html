@@ -6,14 +6,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item {% if request.endpoint == 'index'%}active{%endif%}">
+          <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item {% if request.endpoint == 'mis_proyectos'%}active{%endif%}">
+          <a class="nav-link " href="{{url_for('mis_proyectos')}}">Mis Proyectos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item {% if request.endpoint == 'blog'%}active{%endif%}">
+          <a class="nav-link" href="{{url_for('blog')}}">Mi Blog</a>
+        </li>
+        <li class="nav-item {% if request.endpoint == 'contacto'%}active{%endif%}">
+          <a class="nav-link" href="{{url_for('contacto')}}">Contacto</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
